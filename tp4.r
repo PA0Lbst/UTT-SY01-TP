@@ -42,32 +42,32 @@ lancers = sample(1:6, 10000, replace = TRUE)
 varianceEchantillon = var(lancers)
 print(varianceEchantillon)
 
-# 8. 9. 10.
+# Define the function f to handle vector inputs properly
 f <- function(x) {
-  if (x > 1) {
-    return(3 / x^4)
-  } else {
-    return(0)
-  }
+  ifelse(x > 1, 3 / x^4, 0)
 }
 
+# Calculate E[X] using numerical integration
 esperanceX <- sum(sapply(seq(1, 10000, by = 0.001), function(x) x * f(x))) * 0.001
 print(esperanceX)
 
+# Calculate E[X^2] using numerical integration
 esperanceX2 <- sum(sapply(seq(1, 10000, by = 0.001), function(x) x^2 * f(x))) * 0.001
 print(esperanceX2)
 
+# Calculate the variance Var(X)
 varianceX <- esperanceX2 - (esperanceX)^2
 print(varianceX)
 
 # 11.
-# On récupère que la value parce que R nous donne d'autres trucs
-esperanceX <- integrate(function(x) x * fX(x), lower = 1, upper = Inf)$value
+# Calculate E[X] using integrate for accuracy
+esperanceX <- integrate(function(x) x * f(x), lower = 1, upper = Inf)$value
 print(esperanceX)
 
-# Calcul de E[X^2] en utilisant integrate pour la variance
-esperanceX2 <- integrate(function(x) x^2 * fX(x), lower = 1, upper = Inf)$value
+# Calculate E[X^2] using integrate for accuracy
+esperanceX2 <- integrate(function(x) x^2 * f(x), lower = 1, upper = Inf)$value
+print(esperanceX2)
 
-# Calcul de la variance Var(X)
+# Calculate the variance Var(X)
 varianceX <- esperanceX2 - (esperanceX)^2
 print(varianceX)
