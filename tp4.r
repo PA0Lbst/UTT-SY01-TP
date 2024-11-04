@@ -48,11 +48,11 @@ f <- function(x) {
 }
 
 # Calculate E[X] using numerical integration
-esperanceX <- sum(sapply(seq(1, 10000, by = 0.001), function(x) x * f(x))) * 0.001
+esperanceX <- sum(sapply(seq(1, 10, by = 0.001), function(x) x * f(x))) * 0.001
 print(esperanceX)
 
 # Calculate E[X^2] using numerical integration
-esperanceX2 <- sum(sapply(seq(1, 10000, by = 0.001), function(x) x^2 * f(x))) * 0.001
+esperanceX2 <- sum(sapply(seq(1, 10, by = 0.001), function(x) x^2 * f(x))) * 0.001
 print(esperanceX2)
 
 # Calculate the variance Var(X)
