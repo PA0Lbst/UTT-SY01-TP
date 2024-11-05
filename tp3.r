@@ -1,3 +1,5 @@
+# T'as cru que t'allais trouver quelque chose ici ? Bah non j'ai pas sauvegardé et voilà comment ça s'est fini.
+
 qnorm(0.975)
 dnorm(0)
 pnorm(1.96)
