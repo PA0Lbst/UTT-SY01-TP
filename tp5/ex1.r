@@ -1,16 +1,16 @@
-# Exercice 1
+
+# C'est moi ou ça affiche rien ?
+# HELP !
+
 U <- sample(1:5, size = 10000, replace = TRUE)
 V <- sample(1:5, size = 10000, replace = TRUE)
 
-# Calculer X et Y
 X <- pmin(U, V)
 Y <- pmax(U, V)
 
 head(data.frame(U, V, X, Y))
 
 table(X, Y)
-
-# Exercice 2
 
 # J'ai pas compris ça j'ai pompé sur Google :////////
 par(mfrow = c(1, 2))
