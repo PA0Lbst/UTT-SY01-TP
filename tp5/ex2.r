@@ -1,6 +1,4 @@
-
-# Ok, bon, ça marche pas... on verra plus tard
-# @TODO Debug ptdr
+# Premier graphique
 
 lambda <- 2
 mu <- 3
@@ -11,11 +9,14 @@ y <- rpois(k, mu)
 
 zSim <- x + y
 
+# Création de l'histo
 hist(zSim, probability = TRUE, main = "Distribution de Zsim", xlab = "Z", ylab = "Densité", col = "lightblue", border = "blue")
 
+# Courbe bon c'esr un peu pareil
 curve(dpois(x, lambda + mu), col = "red", lwd = 2, add = TRUE)
-
 legend("topright", legend = c("Zsim simulée", "Z théorique"), col = c("lightblue", "red"), lwd = c(5, 2), bty = "n")
+
+# Second graphique
 
 xGivenZ5 <- x[zSim == 5]
 
